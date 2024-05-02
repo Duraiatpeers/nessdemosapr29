@@ -1,0 +1,8 @@
+eid,ename,edesign,eloc
+e001,sam,manager,hyderabad
+e002,tom,,hyderabad
+e003,tim,admin,london
+e004,Mark,lead,warsaw
+e005,Stephen,,hyderabad
+e006,,,london
+e007,Timothy,lead,warsaw
