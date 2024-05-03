@@ -1,13 +1,17 @@
 import pandas as pd
 
-df = pd.read_csv('data.csv')
-# print(df.dropna())
-# print(df.dropna(thresh=1))
-
-new_df = df.fillna({
-    'subject1': 9999,
-    'subject2': 8888,
-    'subject3': 7777
+df1 = pd.DataFrame({
+    "city": ['pune','mumbai'],
+    "temperature":[98,99]
 })
 
-print(new_df)
+df2 = pd.DataFrame({
+    "city": ['bangalore','mumbai'],
+    "state":["KA","MR"]
+})
+
+df = pd.merge(df1,df2,on='city',how="outer")
+print(df)
+
+df = pd.Series([10,20,30])
+print(df)

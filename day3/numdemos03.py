@@ -23,10 +23,12 @@ import  numpy as np
 x = np.random.normal(50,10,10)
 
 print(x)
-plt.hist(x)
 
+plt.hist(x)
+plt.savefig("hist.png")
 plt.show()
 
 chart_data = np.array([15,5,35,45])
 plt.pie(chart_data)
+plt.savefig("pie.png")
 plt.show()

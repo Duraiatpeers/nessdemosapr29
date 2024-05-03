@@ -1,10 +1,14 @@
 import pandas as pd
 import requests
 
-response = requests.get('https://reqres.in/api/users?page=2')
+
+user_data = {
+    "name": "morpheus",
+    "job": "leader"
+}
+
+response = requests.post('https://reqres.in/api/users',json=user_data)
 res_data = response.json()
-df = pd.DataFrame(res_data["data"])
 
-# df.to_csv("demo1.csv")
-print(df['email'].head(3))
-
+df = pd.DataFrame = res_data
+print(df)

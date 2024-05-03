@@ -1,29 +1,29 @@
 import pandas as pd
 
-data = {
-    'product id': ['AB  1234','CD 5678','DE 9001','FG   8765']
-}
+ts = pd.Timestamp(year=2024,month=5,day=3,hour=11, minute=10, second=10)
 
-df = pd.DataFrame(data)
-# print(df)
+print(type(ts))
 
-# df['Product Code'] = df['product id'].str.split("\\s+").str[1]
-# print(df)
+print(ts.day_name())
+print(ts.dayofweek)
+print(ts.year)
 
-pattern = "(\d{4})"
-df['Code'] = df['product id'].str.extract(pattern)
+this_week = pd.date_range(ts, periods=7)
+print(this_week)
 
-# print(df)
 
-mobile_dt = {
-    'phone': ['123 456 7890']
-}
+df = pd.read_csv('https://raw.githubusercontent.com/m-mehdi/pandas_tutorials/main/server_util.csv')
+# print(df.head(5))
+# print(df.info())
 
-df = pd.DataFrame(mobile_dt)
-print(df)
-pattern = r"(\s)"
-replacement = r"-"
+df['datetime'] = pd.to_datetime(df['datetime'])
+# print(df.head(5))
+# print(df.info())
+#
+# print(df['datetime'].min())
+# print(df['datetime'].max())
 
-df['phone'] = df['phone'].str.replace(pattern,replacement,regex=True)
+# filter = (df['datetime'] < pd.Timestamp('2019-04-06'))
+# print(df.loc[filter])
 
-print(df)
+# print(df.between_time())
